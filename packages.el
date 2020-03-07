@@ -16,3 +16,4 @@
 (package! lua-mode)
 (package! color-theme-modern)
 (package! origami)
+(package! ewal)

@@ -2,7 +2,10 @@
 
 ;; Place your private configuration here
 
+(add-to-list 'custom-theme-load-path "~/.doom.d/custom-themes/ewal-doom-themes")
 (add-to-list 'custom-theme-load-path "~/.doom.d/custom-themes/isaac-matrix.el")
+
+(setq server-socket-dir "~/.emacs.d/server")
 
 (defun setup-tide-mode ()
   (interactive)
@@ -30,7 +33,8 @@
                 (setup-tide-mode)))))
 
 (add-hook! js2-mode
-  (add-hook 'js2-mode-hook #'setup-tide-mode))
+  (add-hook 'js2-mode-hook #'setup-tide-mode)
+  (setq js2-basic-offset 2))
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
@@ -60,4 +64,10 @@
 (setq neo-window-width 50)
 
 (setq doom-font (font-spec :family "Inconsolata" :size 16))
-(setq doom-theme 'doom-dracula)
+
+(setq ewal-use-built-in-always-p nil
+      ewal-use-built-in-on-failure-p t
+      ewal-force-tty-colors-in-daemon-p t
+      ewal-built-in-palette "sexy-material")
+
+(load-theme 'ewal-doom-one t)
