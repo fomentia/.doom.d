@@ -58,6 +58,11 @@
 (global-set-key (kbd "<f8>") 'flycheck-next-error)
 (global-set-key (kbd "<f7>") 'flycheck-previous-error)
 
+(map! :map direx:direx-mode-map
+      :n "TAB" 'direx:toggle-item)
+
+(map! :n "SPC p B" 'direx-project:jump-to-project-root)
+
 (global-origami-mode)
 
 (setq neo-window-fixed-size nil)

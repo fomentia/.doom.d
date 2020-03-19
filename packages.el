@@ -17,3 +17,4 @@
 (package! color-theme-modern)
 (package! origami)
 (package! ewal)
+(package! direx)
