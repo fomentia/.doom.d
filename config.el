@@ -77,4 +77,9 @@
       ewal-force-tty-colors-in-daemon-p t
       ewal-built-in-palette "sexy-material")
 
+;; I can't figure out how to get Firefox not to create a new instance when I
+;; open a URL from Emacs.
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "chromium")
+
 (load-theme 'ewal-doom-one t)
