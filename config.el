@@ -51,7 +51,7 @@
 (global-set-key (kbd "M-0") 'neotree)
 
 (map! :map neotree-mode-map
-      :nm "<return>" 'neotree-enter-ace-window)
+      :n "RET" 'neotree-enter-ace-window)
 
 (global-set-key (kbd "<f9>") 'set-frame-name)
 
