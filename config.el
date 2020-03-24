@@ -59,7 +59,9 @@
 (global-set-key (kbd "<f7>") 'flycheck-previous-error)
 
 (map! :map direx:direx-mode-map
-      :n "TAB" 'direx:toggle-item)
+      :n "TAB" 'direx:toggle-item
+      :n "SPC o e" 'direx:find-item
+      :n "SPC o n" 'direx:find-item-other-window)
 
 (map! :n "SPC p B" 'direx-project:jump-to-project-root)
 
