@@ -77,6 +77,13 @@
       ewal-force-tty-colors-in-daemon-p t
       ewal-built-in-palette "sexy-material")
 
+(setq evil-auto-balance-windows nil)
+
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
+
+(setq ewal-doom-one-brighter-modeline t)
+
 ;; I can't figure out how to get Firefox not to create a new instance when I
 ;; open a URL from Emacs.
 (setq browse-url-browser-function 'browse-url-generic

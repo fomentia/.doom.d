@@ -94,19 +94,25 @@ Can be an integer to determine the exact padding."
     (when ewal-doom-one-padded-modeline
       (if (integerp ewal-doom-one-padded-modeline) ewal-doom-one-padded-modeline 4)))
 
-   (modeline-fg     nil)
-   (modeline-fg-alt base5)
+   (modeline-fg     base0)
+   (modeline-fg-alt base0)
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken blue 0.475)
+        magenta
       `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
-        (doom-darken blue 0.45)
+        magenta
       `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+   (modeline-bg-inactive
+    (if -modeline-bright
+        red
+      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt))))
+   (modeline-bg-inactive-l
+    (if -modeline-bright
+        red
+      `(,(car bg-alt) ,@(cdr base1)))))
 
 
   ;; --- extra faces ------------------------
@@ -143,10 +149,17 @@ Can be an integer to determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
    ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight) :foreground base0)
+   (doom-modeline-panel :background (if -modeline-bright modeline-bg highlight) :foreground base0)
+   (doom-modeline-buffer-file :foreground base0)
+   (doom-modeline-buffer-path :foreground base0)
+   (doom-modeline-buffer-project-root :foreground base0)
+   (doom-modeline-project-dir :foreground base0)
+   (doom-modeline-project-root-dir :foreground base0)
+   (doom-modeline-info :foreground base0)
+   (doom-modeline-buffer-major-mode :foreground base0)
+   (doom-modeline-buffer-minor-mode :foreground base0)
+   (doom-modeline-buffer-modified :foreground fg)
 
    ;; ivy-mode
    (ivy-current-match :background blue :distant-foreground base0 :weight 'normal)
@@ -171,9 +184,10 @@ Can be an integer to determine the exact padding."
    (magit-diff-added-highlight :foreground (doom-darken green 0.5))
    (magit-diff-removed :foreground (doom-darken yellow 0.5))
    (magit-diff-removed-highlight :foreground (doom-darken yellow 0.5))
-   (git-commit-overlong-summary :foreground yellow)
+   ;; (git-commit-overlong-summary :foreground yellow)
    (company-tooltip-common :background yellow)
-   (ivy-current-match :background (doom-lighten yellow 0.3)))
+   (ivy-current-match :background (doom-lighten yellow 0.3))
+   )
 
 
   ;; --- extra variables ---------------------
