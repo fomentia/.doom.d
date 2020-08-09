@@ -18,3 +18,4 @@
 (package! origami)
 (package! ewal)
 (package! direx)
+(package! rg)

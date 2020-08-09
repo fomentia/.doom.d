@@ -15,6 +15,10 @@
   (tide-hl-identifier-mode +1)
   (company-mode +1))
 
+(defun set-window-size-fixed ()
+  (interactive)
+  (setq window-size-fixed t))
+
 (add-hook! tide-mode
   (setq tide-format-options '(:indentSize 2 :tabSize 2))
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
@@ -38,7 +42,7 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(global-set-key (kbd "C-;") 'comment-or-uncomment-region)
+(map! :v ";" 'comment-or-uncomment-region)
 
 (map! :nm "z m" 'origami-close-all-nodes
       :nm "z r" 'origami-open-all-nodes
@@ -65,10 +69,16 @@
 
 (map! :n "SPC p B" 'direx-project:jump-to-project-root)
 
+(map! :n "SPC g h" 'git-gutter:popup-hunk)
+
+(map! :n "SPC j b" 'sp-beginning-of-sexp)
+
 (global-origami-mode)
 
 (setq neo-window-fixed-size nil)
 (setq neo-window-width 50)
+
+(setq json-reformat:indent-width 4)
 
 (setq doom-font (font-spec :family "Inconsolata" :size 16))
 
@@ -83,6 +93,14 @@
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
 (setq ewal-doom-one-brighter-modeline t)
+
+(setq org-log-into-drawer t)
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
+
+(rg-enable-menu)
+
+(setq select-enable-clipboard t)
 
 ;; I can't figure out how to get Firefox not to create a new instance when I
 ;; open a URL from Emacs.
