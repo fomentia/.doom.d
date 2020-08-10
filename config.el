@@ -97,6 +97,8 @@
 (setq org-log-into-drawer t)
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
 
 (rg-enable-menu)
 
