@@ -100,6 +100,14 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
+(map! :map org-mode-map
+      :n "SPC m c t t" 'org-timer
+      :n "SPC m c t s" 'org-timer-start
+      :n "SPC m c t c" 'org-timer-set-timer
+      :n "SPC m c t S" 'org-timer-stop
+      :n "SPC m c t p" 'org-timer-pause-or-continue
+      :n "SPC m c t i" 'org-timer-item)
+
 (rg-enable-menu)
 
 (setq select-enable-clipboard t)
