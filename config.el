@@ -117,4 +117,4 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "chromium")
 
-(load-theme 'ewal-doom-one t)
+(load-theme 'doom-gruvbox t)
