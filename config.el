@@ -99,6 +99,7 @@
       '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
+(setq org-clock-idle-time 15)
 
 (map! :map org-mode-map
       :n "SPC m c t t" 'org-timer
@@ -106,11 +107,22 @@
       :n "SPC m c t c" 'org-timer-set-timer
       :n "SPC m c t S" 'org-timer-stop
       :n "SPC m c t p" 'org-timer-pause-or-continue
-      :n "SPC m c t i" 'org-timer-item)
-
-(rg-enable-menu)
+      :n "SPC m c t i" 'org-timer-item
+      :n "SPC m c u" 'org-clock-update-time-maybe)
 
 (setq select-enable-clipboard t)
+
+(zoom-mode 1)
+
+(set-variable 'zoom-size '(0.618 . 0.618))
+
+(set-face-attribute 'mode-line nil :background "#458588" :foreground "#fbf1c7")
+(set-face-attribute 'mode-line-inactive nil :background "#458588" :foreground "#282828")
+(set-face-attribute 'doom-modeline-buffer-path nil :foreground "#fbf1c7")
+(set-face-attribute 'doom-modeline-project-dir nil :foreground "#fbf1c7")
+(set-face-attribute 'doom-modeline-buffer-file nil :foreground "#fbf1c7")
+(set-face-attribute 'doom-modeline-info nil :foreground "#fbf1c7")
+(set-face-attribute 'doom-modeline-buffer-major-mode nil :foreground "#fbf1c7")
 
 ;; I can't figure out how to get Firefox not to create a new instance when I
 ;; open a URL from Emacs.

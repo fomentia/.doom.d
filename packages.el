@@ -19,3 +19,4 @@
 (package! ewal)
 (package! direx)
 (package! rg)
+(package! zoom)
