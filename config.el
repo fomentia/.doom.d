@@ -114,7 +114,7 @@
 
 (zoom-mode 1)
 
-(set-variable 'zoom-size '(0.618 . 0.618))
+(set-variable 'zoom-size '(0.618 . 0.5))
 
 (set-face-attribute 'mode-line nil :background "#458588" :foreground "#fbf1c7")
 (set-face-attribute 'mode-line-inactive nil :background "#458588" :foreground "#282828")
