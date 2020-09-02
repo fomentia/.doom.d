@@ -8,7 +8,10 @@
 ;; More information about these modules (and what flags they support) can be
 ;; found in modules/README.org.
 
-(doom! :input
+(doom! :os
+       tty
+
+       :input
        ;;chinese
        ;;japanese
 
