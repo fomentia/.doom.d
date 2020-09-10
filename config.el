@@ -73,6 +73,8 @@
 
 (map! :n "SPC j b" 'sp-beginning-of-sexp)
 
+(map! :n "C-w f" 'other-window)
+
 (global-origami-mode)
 
 (setq neo-window-fixed-size nil)
@@ -104,11 +106,10 @@
 (setq select-enable-clipboard t)
 
 (zoom-mode 1)
-
 (set-variable 'zoom-size '(0.5 . 0.618))
 
 ;; I can't figure out how to get Firefox not to create a new instance when I
-;; open a URL from Emacs.
+;; open a URL from Emacs, so using Chromium for now.
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "chromium")
 
