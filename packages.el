@@ -11,3 +11,4 @@
 (package! lua-mode)
 (package! origami)
 (package! zoom)
+(package! yaml-mode)
