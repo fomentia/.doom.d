@@ -52,10 +52,11 @@
       :nm "z C" 'origami-close-node-recursively
       :nm "z a" 'origami-toggle-node)
 
-(global-set-key (kbd "M-0") 'neotree)
-
 (map! :map neotree-mode-map
       :n "RET" 'neotree-enter-ace-window)
+
+(map! :n "C-w v" (lambda () (interactive) (split-window-horizontally) (other-window 1))
+      :n "C-w s" (lambda () (interactive) (split-window-vertically) (other-window 1)))
 
 (global-set-key (kbd "<f9>") 'set-frame-name)
 
